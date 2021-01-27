@@ -1,0 +1,2 @@
+# Theta
+Discord js Bot

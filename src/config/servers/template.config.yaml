@@ -1,0 +1,10 @@
+#{servername}
+
+BotPrefix: "&"
+MandatoryPrefix: true
+NumberOfPrefixs: 1
+CompareMethod: 2 #0 - highest, 1 - lowest, 2 - highestfromlist
+NicknamesPrefixs:
+  - 
+    id: "else"
+    prefix: ''

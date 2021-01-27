@@ -1,0 +1,14 @@
+{
+    "apps" :[{
+        "script": "./src/index.js",
+        "watch": ["src"],
+        "ignore_watch": ["./src/config/servers", "./node_modules"],
+        "watch_options": {
+            "followSymlinks": false
+        },
+        "name": "new_theta",
+        "args": [
+            "--color"
+        ]
+    }]
+}
