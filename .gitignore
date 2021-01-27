@@ -1,0 +1,4 @@
+node_modules/
+src/config/servers/
+.env
+package-lock.json
