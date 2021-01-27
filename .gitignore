@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-node_modules/
 src/config/servers/
-.env
 package-lock.json
-=======
+
 # Logs
 logs
 *.log
@@ -108,4 +105,3 @@ dist
 
 # TernJS port file
 .tern-port
->>>>>>> 7fcc24683c76438a4c4b02fad550b44ef21961fa
