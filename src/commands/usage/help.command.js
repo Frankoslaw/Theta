@@ -1,6 +1,29 @@
-const { prefix } = require('../config/config.js');
+const { prefix } = require('../../config/config.js');
 const { MessageEmbed } = require("discord.js")
 
+const { Command } = require('discord.js-commando');
+
+module.exports = class changebotprefixCommand extends Command {
+	constructor(client) {
+		super(client, {
+			name: 'help',
+			group: 'usage',
+			memberName: 'changebotprefix',
+			description: 'Change actual bot prefix.',
+            args: [
+                {
+                    key: `commandname`,
+                    prompt: `What command you like to check?`,
+                    type: `string`,
+					default: ''
+                }
+            ]
+		});
+	}
+
+    run(message, { commandname }){
+	}
+}
 module.exports = {
 	name: 'help',
 	description: 'List all of my commands or info about a specific command.',

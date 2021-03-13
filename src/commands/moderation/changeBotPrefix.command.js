@@ -1,16 +1,28 @@
-module.exports = {
-	name: 'changebotprefix',
-    description: 'Change actual bot prefix',
-    usage: '[new Prefix]',
-	args: true,
-	guildOnly: true,
-	execute(message, args) {
-        //message.member.guild.me.hasPermission
-		if(!message.member.hasPermission("ADMINISTRATOR")){
+const { Command } = require('discord.js-commando');
+
+module.exports = class changebotprefixCommand extends Command {
+	constructor(client) {
+		super(client, {
+			name: 'changebotprefix',
+			aliases: ['cbp'],
+			group: 'moderation',
+			memberName: 'changebotprefix',
+			description: 'Change actual bot prefix.',
+            args: [
+                {
+                    key: `newPrefix`,
+                    prompt: `What will be a new prefix?`,
+                    type: `string`
+                }
+            ]
+		});
+	}
+
+    run(message, { newPrefix }){
+        if(!message.member.hasPermission("ADMINISTRATOR")){
             return message.reply("To execute this command you need administrator access!")
         }
 
-        var newPrefix = args[0].toString()
         if(newPrefix.length < 1 || newPrefix.length > 3){
             return message.reply("Prefix must have length betwen 1 to 3 characters!")
         }
@@ -23,5 +35,5 @@ module.exports = {
         message.client.saveConfig(message.guild.id)
 
         return message.channel.send(`Changed prefix: ${oldPrefix} -> ${newPrefix}`)
-	},
+    }
 };
